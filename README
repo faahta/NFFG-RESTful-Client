@@ -1,8 +1,4 @@
-Distributed Programming II A.Y. 2016-17
-=======================================
-
-Assignment n. 2
-------------------------
+This project is a client for a RESTful web service named Neo4JXML .
 
 This archive includes:
 
@@ -14,3 +10,13 @@ This archive includes:
 - src					The location of source files
 - custom				The location of custom files
 - build.xml				The ant script for this assignment
+
+
+The service, which is based on NEO4J (a graph-oriented DB), provides the
+possibility to create a graph, stored by NEO4J, by creating single nodes and relationships, and the
+possibility to query for the paths that connect a given source node to a given destination node in the
+graph that has been created. Each node can have properties (i.e. name-value pairs) and labels (i.e.
+strings).
+
+The documentation about the available operations provided by the Neo4JXML service is detailed in
+the document file neo4jxmlRESTapi.pdf.
