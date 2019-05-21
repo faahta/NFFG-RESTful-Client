@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<project name="Assignment2_v3" default="generate-artifacts" basedir=".">
+
+	<property name="root.location" location="." />
+	<property name="PORT" value="8080" />
+	<property name="URL" value="http://localhost:${PORT}/Neo4JXML/rest" />
+	<property name="WADL" value="${URL}/application.wadl" />
+	<property name="gen.dir" location="${root.location}/gen-src" />
+	<property name="lib.dir" location="${root.location}/lib" />
+	
+	<path id=".classpath">
+		<pathelement location="${lib.dir}/NFFGRandom.jar" />
+	</path>
+
+	<!-- define wjc task (WADL to Java) -->
+	<taskdef name="wjc" classname="org.jvnet.ws.wadl2java.WJCTask">
+		   <classpath>
+		   	<fileset dir="${lib.dir}" includes="*.jar" />
+		   </classpath>
+    </taskdef>
+
+	<target name="generate-artifacts">
+		<mkdir dir="${gen.dir}" />
+	   	<echo message="Compiling the descriptions..." />
+	   	<wjc description="${WADL}" package="it.polito.dp2.NFFG.sol2"
+	       autoSchemaPackage="true" target="${gen.dir}">
+	     <customizations dir="${root.location}" includes="binding.xjc"/>
+	   	 <produces dir="${gen.dir}/it/polito/dp2/NFFG/sol2" includes="*.java"/>
+	     <depends dir="${root.location}" includes="build.xml"/>
+	    </wjc>
+	</target>
+</project>

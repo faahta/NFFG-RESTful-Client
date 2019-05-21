@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 2.24 2016-10-27 14:35:27"/>
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:hint="This is simplified WADL with user and core resources only. To get full WADL with extended resources use the query parameter detail. Link: http://localhost:8080/Neo4JXML/rest/application.wadl?detail=true"/>
+    <grammars>
+        <include href="application.wadl/xsd0.xsd">
+            <doc title="Generated" xml:lang="en"/>
+        </include>
+    </grammars>
+    <resources base="http://localhost:8080/Neo4JXML/rest/">
+        <resource path="/resource">
+            <resource path="/node/{nodeid}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nodeid" style="template" type="xs:string"/>
+                <method id="getNode" name="GET">
+                    <response>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:node" mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="deleteNode" name="DELETE">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/relationship/{relationshipid}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="relationshipid" style="template" type="xs:string"/>
+                <method id="getRelationship" name="GET">
+                    <response>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:relationship" mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="deleteRelationship" name="DELETE">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="getSupportedOperationsRelationshipId" name="OPTIONS">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/node/{nodeid}/label">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nodeid" style="template" type="xs:string"/>
+                <method id="getLabels" name="GET">
+                    <response>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:labels" mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="postLabel" name="POST">
+                    <request>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:labels" mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="getSupportedOperationsLabel" name="OPTIONS">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/node/{nodeid}/label/{labelid}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="labelid" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nodeid" style="template" type="xs:string"/>
+                <method id="deleteLabels" name="DELETE">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="getSupportedOperationsLabelId" name="OPTIONS">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/node/{nodeid}/relationship">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nodeid" style="template" type="xs:string"/>
+                <method id="postRelationship" name="POST">
+                    <request>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:relationship" mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:relationship" mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/nodes">
+                <method id="getAllNodes" name="GET">
+                    <response>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:nodes" mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="deleteAllNode" name="DELETE">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/node/{nodeid}/paths">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nodeid" style="template" type="xs:string"/>
+                <method id="getPaths" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dst" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:paths" mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="getSupportedOperationsPaths" name="OPTIONS">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/node">
+                <method id="postNode" name="POST">
+                    <request>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:node" mediaType="application/xml"/>
+                    </request>
+                    <response>
+                        <representation xmlns:ns2="http://www.example.org/Neo4J" element="ns2:node" mediaType="application/xml"/>
+                    </response>
+                </method>
+                <method id="getSupportedOperationsNode" name="OPTIONS">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/node/{nodeId}">
+                <method id="getSupportedOperationsNodeId" name="OPTIONS">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/relationship">
+                <method id="getSupportedOperationsRelationship" name="OPTIONS">
+                    <response>
+                        <representation mediaType="application/xml"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>
