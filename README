@@ -1,16 +1,4 @@
-This project is a client for a RESTful web service named Neo4JXML .
-
-This archive includes:
-
-- README            	This file
-- Assignment2.pdf   	The text of Assignment 2
-- neo4jxmlRESTapi.pdf   The documentation of the Neo4JXML service
-- war					The location of the .war file of the Neo4JXML service
-- lib					The location of the jar files necessary for this assignment
-- src					The location of source files
-- custom				The location of custom files
-- build.xml				The ant script for this assignment
-
+This project is a test client for a RESTful web service named Neo4JXML .
 
 The service, which is based on NEO4J (a graph-oriented DB), provides the
 possibility to create a graph, stored by NEO4J, by creating single nodes and relationships, and the
